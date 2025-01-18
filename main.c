@@ -9,7 +9,7 @@
 <body>
     <canvas id="chart" width="800" height="400"></canvas>
     <script>
-        // Функция f(x) = ∛(|x| + 2) - 1 .
+        // Функция f(x) = ∛(|x| + 2) -1
         function f(x) {
             return Math.cbrt(Math.abs(x) + 2) - 1;
         }
