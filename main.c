@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>График функции</title>
+    <title>График функции вариант 6</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <canvas id="chart" width="800" height="400"></canvas>
     <script>
+
+    // Функция f(x) = ∛(|x| + 2) - 1
         // Функция f(x) = ∛(|x| + 2) - 1
         function f(x) {
             return Math.cbrt(Math.abs(x) + 2) - 1;
