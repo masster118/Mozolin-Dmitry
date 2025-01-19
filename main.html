@@ -9,16 +9,21 @@
 <body>
     <canvas id="chart" width="800" height="400"></canvas>
     <script>
-        // Функция f(x) = ∛(|x| + 2) -1
+        // Функция f(x) = ∛(|x| + 2) -1 заменена на Функцию f(x) = ln^2(√(x + 5))
         function f(x) {
-            return Math.cbrt(Math.abs(x) + 2) - 1;
+            if (x + 5 > 0) {
+                return Math.pow(Math.log(Math.sqrt(x + 5)), 2);
+            } else {
+                return NaN; // Значение не определено для x + 5 <= 0
+            }
         }
+
 
         // Генерация значений для графика
         const step = 0.1; // Шаг табулирования
         const xValues = [];
         const yValues = [];
-        for (let x = -10; x <= 10; x += step) {
+        for (let x = -4.5; x <= 6.1; x += step) { // Изменены границы отрезка по условию варианта задания на практику
             const xRounded = parseFloat(x.toFixed(3)); // Округление до 3 знаков
             xValues.push(xRounded);
             yValues.push(f(xRounded));
@@ -31,7 +36,7 @@
             data: {
                 labels: xValues,
                 datasets: [{
-                    label: 'f(x) = ∛(|x| + 2) - 1',
+                    label: 'f(x) = ln^2(√(x + 5))',
                     data: yValues,
                     borderColor: 'red',
                     borderWidth: 2,
